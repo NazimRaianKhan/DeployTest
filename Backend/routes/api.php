@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\LoginController as LoginControllerV1;
 use App\Http\Controllers\LoginController as LoginController;
 use App\Http\Controllers\FacultyController as FacultyController;
 use App\Http\Controllers\Api\V1\UsersController as UsersController;
+use App\Http\Controllers\RecommendedController;
 
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\LibrarianController as LibrarianController;
