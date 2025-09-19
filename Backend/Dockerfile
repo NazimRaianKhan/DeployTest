@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libzip-dev \
     default-mysql-client \
+    gettext-base \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 # Install Composer
@@ -45,8 +46,11 @@ COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+ENV PORT=80
+ENV SERVER_NAME=localhost
+
 # Expose port 80
-EXPOSE 80
+EXPOSE ${PORT}
 
 # Use entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
